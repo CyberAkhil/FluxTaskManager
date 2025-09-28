@@ -31,8 +31,16 @@ body {
 }
 
 .header p {
-    color: #718096;
+    color: blue;
     font-size: 16px;
+}
+
+img.Flux {
+    height: 80px;
+    float: right;
+    margin-top: -80px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(32, 207, 90, 0.1);
 }
 
 .main-content {
