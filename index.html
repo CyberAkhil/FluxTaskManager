@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Task Management System</h1>
+            <p>A Task Management Site For Organizing Technical Club Flux Tasks</p>
+        </div>
+
+        <div class="main-content">
+            <div class="task-form-section">
+                <h2>Create New Task</h2>
+                <form id="taskForm">
+                    <div class="form-group">
+                        <label for="taskName">Task Name *</label>
+                        <input type="text" id="taskName" name="taskName" required placeholder="Enter Task">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="priority">Priority Level *</label>
+                        <select id="priority" name="priority" class="priority-select" required>
+                            <option value="">Select Priority</option>
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comment">Comments</label>
+                        <textarea id="comment" name="comment" placeholder="Add Comment"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add Task</button>
+                </form>
+            </div>
+
+            <div class="tasks-section">
+                <div class="stats">
+                    <div class="stat-card">
+                        <h3 id="totalTasks">0</h3>
+                        <p>Total Tasks</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="activeTasks">0</h3>
+                        <p>Active Tasks</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="completedTasks">0</h3>
+                        <p>Completed</p>
+                    </div>
+                </div>
+
+                <div class="tasks-header">
+                    <h2>Tasks List</h2>
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-filter="all">All</button>
+                        <button class="filter-tab" data-filter="active">Active</button>
+                        <button class="filter-tab" data-filter="completed">Completed</button>
+                    </div>
+                </div>
+
+                <div id="tasksList">
+                    <div class="empty-state">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 
+                5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                        <h3>No tasks yet</h3>
+                        <p>Create your first task to get started</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="remarkModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Complete Task</h3>
+            </div>
+            <div class="form-group">
+                <label for="remarkText">Add Completion Remark</label>
+                <textarea id="remarkText" placeholder="Enter Remark"></textarea>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-cancel" onclick="closeRemarkModal()">Cancel</button>
+                <button class="btn btn-save" onclick="saveRemark()">Complete Task</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
